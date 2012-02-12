@@ -35,7 +35,7 @@ int main()
 		i++;
 	}
 	if(first_time!=1)printf("\n\n\n");
-	printf("CGHWeather v0.1\n");
+	printf("cWeather v0.1 - github.com/caiguanhao/cWeather\n");
 	printf("输入以下任一地名（中文或英文）或其编号查看即时天气信息：\n\n%s\n\n获取信息需要等约5秒时间。输入exit或按CTRL+C退出。默认为1/大良/daliang：\n\n",placestxt);
 	char input[100];
 	char dplace[100];
@@ -132,7 +132,7 @@ char *do_web_request(char *url)
 	curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, write_callback_func);
 	curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, &response);
 	//curl_easy_setopt(curl_handle, CURLOPT_VERBOSE, 1);
-	//curl_easy_setopt(curl_handle, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
+	curl_easy_setopt(curl_handle, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
 	//struct curl_slist *slist=NULL;
 	//slist = curl_slist_append(slist, "Expect:");
 	//curl_easy_setopt(curl_handle, CURLOPT_HTTPHEADER, slist);
